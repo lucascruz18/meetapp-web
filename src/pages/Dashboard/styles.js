@@ -11,11 +11,11 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 
     strong {
       color: #fff;
       font-size: 32px;
-      margin: 0 20px;
     }
 
     button {
@@ -64,7 +64,7 @@ export const MeetupList = styled.li`
     font-weight: bold;
   }
 
-  p {
+  span {
     margin-right: 15px;
     color: rgba(255, 255, 255, 0.6);
   }
