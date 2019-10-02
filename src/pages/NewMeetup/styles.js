@@ -30,6 +30,7 @@ export const Container = styled.div`
       font-size: 14px;
       height: 150px;
       padding-top: 10px;
+      max-width: 100%;
     }
 
     span {

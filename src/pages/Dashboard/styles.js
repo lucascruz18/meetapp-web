@@ -51,8 +51,10 @@ export const MeetupList = styled.li`
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
+  transition: 0.2s;
 
   &:hover {
+    margin: 4px;
     opacity: 0.7;
   }
 
