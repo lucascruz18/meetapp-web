@@ -52,6 +52,10 @@ export const MeetupList = styled.li`
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 
+  &:hover {
+    opacity: 0.7;
+  }
+
   div {
     display: flex;
     flex-direction: row;

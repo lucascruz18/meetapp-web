@@ -9,6 +9,8 @@ import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
 import NewMeetup from '../pages/NewMeetup';
+import Details from '../pages/Details';
+import EditMeetup from '../pages/EditMeetup';
 
 export default function Routes() {
   return (
@@ -19,6 +21,8 @@ export default function Routes() {
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/profile" component={Profile} isPrivate />
       <Route path="/newMeetup" component={NewMeetup} isPrivate />
+      <Route path="/details/:id" component={Details} isPrivate />
+      <Route path="/edit/:id" component={EditMeetup} isPrivate />
     </Switch>
   );
 }

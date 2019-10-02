@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default createGlobalStyle`
   * {
@@ -16,6 +17,10 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
+  }
+
+  #root {
+    min-height: 100%;
   }
 
   body {
@@ -36,12 +41,5 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
-  }
-
-  .react-datepicker-wrapper,
-  .react-datepicker__input-container,
-  .react-datepicker-ignore-onclickoutside {
-    display: block !important;
-    width: 100%;
   }
 `;

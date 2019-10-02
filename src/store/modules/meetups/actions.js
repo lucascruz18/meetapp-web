@@ -11,6 +11,18 @@ export function creationMeetupSuccess() {
   };
 }
 
+export function updateMeetupRequest() {
+  return {
+    type: '@meetup/UPDATE_MEETUP_REQUEST',
+  };
+}
+
+export function updateMeetupSuccess() {
+  return {
+    type: '@meetup/UPDATE_MEETUP_SUCCESS',
+  };
+}
+
 export function meetupFailure() {
   return {
     type: '@auth/MEETUP_FAILURE',
