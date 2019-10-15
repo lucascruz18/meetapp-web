@@ -46,35 +46,38 @@ export const Container = styled.div`
       background: rgba(255, 255, 255, 0.1);
       margin: 10px 0 20px;
     }
-
-    div {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-
-    button {
-      margin: 20px 0 0;
-      width: 162px;
-      height: 40px;
-      background: #f94d6a;
-      font-weight: bold;
-      border: 0;
-      border-radius: 4px;
-      font-size: 16px;
-      color: #fff;
-      transition: background 0.2s;
-
-      &:hover {
-        background: ${darken(0.04, '#F94D6A')};
-      }
-    }
   }
 
   .react-datepicker-wrapper {
+    div {
+      width: 100%;
+    }
     display: inline;
     input {
       width: 100%;
     }
+  }
+`;
+
+export const AlignEnd = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+`;
+
+export const Button = styled.button`
+  margin: 20px 0 0;
+  width: 162px;
+  height: 40px;
+  background: #f94d6a;
+  font-weight: bold;
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  transition: background 0.2s;
+
+  &:hover {
+    background: ${darken(0.04, '#F94D6A')};
   }
 `;

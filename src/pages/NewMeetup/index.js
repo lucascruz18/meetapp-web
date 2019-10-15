@@ -8,7 +8,7 @@ import { creationMeetupRequest } from '../../store/modules/meetups/actions';
 import BannerInput from '../../components/BannerInput';
 import DateInput from '../../components/DateInput';
 
-import { Container } from './styles';
+import { Container, Button, AlignEnd } from './styles';
 
 const schema = Yup.object().shape({
   title: Yup.string().required('O titulo é obrigatório'),
@@ -40,9 +40,9 @@ export default function NewMeetup() {
         <DateInput name="date" placeholder="Data do meetup" />
         <Input name="location" placeholder="Localização" />
 
-        <div>
-          <button type="submit">Salvar meetup</button>
-        </div>
+        <AlignEnd>
+          <Button type="submit">Salvar meetup</Button>
+        </AlignEnd>
       </Form>
     </Container>
   );

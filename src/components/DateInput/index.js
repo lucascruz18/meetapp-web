@@ -11,16 +11,17 @@ export default function DateInput({ name, placeholder }) {
   const [selected, setSelected] = useState(defaultValue);
 
   useEffect(() => {
-    registerField({
-      name: fieldName,
-      ref: ref.current,
-      path: 'props.selected',
-      clearValue: pickerRef => {
-        pickerRef.clear();
-      },
-    });
-    // eslint-disable-next-line
-  }, [ref.current, fieldName]);
+    if (ref.current) {
+      registerField({
+        name: fieldName,
+        ref: ref.current,
+        path: 'props.selected',
+        clearValue: pickerRef => {
+          pickerRef.clear();
+        },
+      });
+    }
+  }, [ref.current]); //eslint-disable-line
 
   return (
     <>

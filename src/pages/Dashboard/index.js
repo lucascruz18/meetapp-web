@@ -32,7 +32,7 @@ export default function Dashboard() {
     }
 
     loadMeetups();
-  }, [dateFormatted, meetups]);
+  }, []);
 
   return (
     <>
