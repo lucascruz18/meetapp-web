@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import logo from '../../assets/logo.svg';
@@ -22,7 +23,12 @@ export default function SignUp() {
   const dispatch = useDispatch();
 
   function handleSubmit(name, email, password) {
-    dispatch(signUpRequest(name, email, password));
+    try {
+      dispatch(signUpRequest(name, email, password));
+      toast.success('Conta criada com sucesso');
+    } catch (err) {
+      toast.error('Falha no cadastro, verifique seus dados');
+    }
   }
 
   return (
