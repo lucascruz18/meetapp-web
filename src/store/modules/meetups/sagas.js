@@ -49,7 +49,7 @@ export function* updateMeetup({ payload }) {
 
     yield put(updateMeetupSuccess());
 
-    history.push('dashboard');
+    history.push('/');
   } catch (err) {
     toast.error('Falha ao editar meetup, verifique os dados');
     yield put(meetupFailure());
