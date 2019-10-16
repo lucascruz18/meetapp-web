@@ -35,7 +35,7 @@ export default function Details({ match }) {
     }
 
     loadMeetups();
-  }, [id, meetup]);
+  }, [id]);
 
   function handleEdit() {
     history.push(`/edit/${id}`);
