@@ -11,9 +11,10 @@ export function creationMeetupSuccess() {
   };
 }
 
-export function updateMeetupRequest() {
+export function updateMeetupRequest(data) {
   return {
     type: '@meetup/UPDATE_MEETUP_REQUEST',
+    payload: { data },
   };
 }
 
