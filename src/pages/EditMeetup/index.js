@@ -54,6 +54,7 @@ export default function EditMeetup({ match }) {
   }, [id]);
 
   function handleSubmit(data) {
+    data.id = id;
     dispatch(updateMeetupRequest(data));
   }
 
