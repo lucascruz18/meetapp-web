@@ -2,12 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-datepicker/dist/react-datepicker.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    outline: 0;
+    outline: 0 !important;
     box-sizing: border-box;
   }
 

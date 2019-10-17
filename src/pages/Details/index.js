@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import { toast } from 'react-toastify';
+import { Modal, Button } from 'reactstrap';
 
 import { MdModeEdit, MdDeleteForever, MdToday, MdPlace } from 'react-icons/md';
 import api from '../../services/api';
@@ -17,6 +18,8 @@ export default function Details({ match }) {
 
   const [meetup, setMeetup] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const [liveModal, setLiveModal] = useState(false);
 
   const dateFormatted = date =>
     format(date, "d 'de' MMMM 'às' H:mm'h'", { locale: pt });
@@ -43,16 +46,61 @@ export default function Details({ match }) {
 
   async function handleDelete(idMeetup) {
     try {
+      setLiveModal(false);
       await api.delete(`/meetup/${idMeetup}`);
       toast.success('Meetup cancelado com sucesso!');
       history.push('/');
     } catch (err) {
+      setLiveModal(false);
       toast.error('Erro ao excluir meetup.');
     }
   }
 
   return (
     <>
+      <Modal isOpen={liveModal} toggle={() => setLiveModal(false)}>
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLiveLabel">
+            Cancelamento do meetup
+          </h5>
+          <button
+            aria-label="Close"
+            className="close"
+            data-dismiss="modal"
+            type="button"
+            onClick={() => setLiveModal(false)}
+          >
+            <span aria-hidden>×</span>
+          </button>
+        </div>
+        <div className="modal-body">
+          <p>Tem certeza que deseja cancelar seu meetup ?</p>
+        </div>
+        <div className="modal-footer">
+          <div className="left-side">
+            <Button
+              // className="btn-link"
+              color="default"
+              data-dismiss="modal"
+              type="button"
+              onClick={() => setLiveModal(false)}
+            >
+              voltar
+            </Button>
+          </div>
+          <div className="divider" />
+          <div className="right-side">
+            <Button
+              // className="btn-link"
+              color="danger"
+              type="button"
+              onClick={() => handleDelete(meetup.id)}
+            >
+              Sim, cancelar meetup!
+            </Button>
+          </div>
+        </div>
+      </Modal>
       {loading ? (
         <Loading />
       ) : (
@@ -64,7 +112,7 @@ export default function Details({ match }) {
                 <MdModeEdit size={20} color="#FFF" />
                 Editar
               </button>
-              <button type="button" onClick={() => handleDelete(meetup.id)}>
+              <button type="button" onClick={() => setLiveModal(true)}>
                 <MdDeleteForever size={20} color="#FFF" />
                 Cancelar
               </button>
